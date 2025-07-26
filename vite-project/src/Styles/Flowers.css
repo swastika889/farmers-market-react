@@ -1,0 +1,130 @@
+.flowers-container {
+  padding: 40px;
+  background-color: #fffbe6;
+  min-height: 100vh;
+}
+
+.flowers-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.flowers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 50px;
+}
+
+.flowers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.flowers-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.flowers-card:hover {
+  transform: translateY(-5px);
+}
+
+.flowers-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.flowers-name {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.flowers-price {
+  font-size: 1rem;
+  color: #888;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  font-size: 18px;
+  margin: 0 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #d893c2;
+  color: #080505;
+  border-radius: 4px;
+}
+
+.quantity-controls span {
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+  color: black;
+}
+.bakery-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 20px 40px;
+}
+
+.checkout-btn {
+  padding: 8px 20px;
+  background-color: #ffb700;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.checkout-btn:hover {
+  background-color: #e08820;
+}
+
+.banner-footer {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  background-color: rgba(238, 170, 215, 0.65);
+  text-align: center;
+  padding: 16px;
+  color:#1d0909
+
+}
