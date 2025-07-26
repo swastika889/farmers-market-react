@@ -91,7 +91,7 @@ function Landing() {
                 </button>
           </header>
 
-          <footer className="banner-footer">
+          <footer className="bannerr-footer">
             <p className="tagline">HARVESTING HEALTH, ONE BITE AT A TIME</p>
             <p className="sub-tagline">Enjoy Multi Cart Checkout Now!</p>
           </footer>

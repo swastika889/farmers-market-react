@@ -47,9 +47,29 @@ function Bakery() {
         quantity: quantities[index],
       }))
       .filter((item) => item.quantity > 0);
+      // 1. Get existing cart items
+    const existingCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // 2. Merge: If item already exists (by name), update quantity
+    const updatedCart = [...existingCart];
+
+    selectedItems.forEach((newItem) => {
+        const existingIndex = updatedCart.findIndex(
+        (item) => item.name === newItem.name
+        );
+
+        if (existingIndex !== -1) {
+        // If already in cart, add quantity
+        updatedCart[existingIndex].quantity += newItem.quantity;
+        } else {
+        // If not in cart, add it
+        updatedCart.push(newItem);
+        }
+    });
+
 
     // Store in localStorage or state management
-    localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+    localStorage.setItem("cartItems", JSON.stringify(updatedCart));
 
     // Redirect to Landing page
     navigate("/");
@@ -59,6 +79,10 @@ function Bakery() {
     <div className="bakery-container">
       <div className="banner">
         <img src={banner} alt="Banner" className="banner-img" />
+        <footer className="banner-footer">
+            <p className="tagline">PATISSERIE</p>
+            <p className="sub-tagline">Love At First Bite !</p>
+          </footer>
       </div>
 
       <div className="bakery-header">
