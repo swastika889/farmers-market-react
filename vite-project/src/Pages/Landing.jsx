@@ -13,7 +13,18 @@ import vegetables from "../assets/images/vegetables.png";
 import fruits from "../assets/images/fruits.png";
 import soulfood from "../assets/images/soulfood.png";
 
-function Landing( { isLoggedIn }) {
+function Landing() {
+    const [showCartPopup, setShowCartPopup] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  const toggleCartPopup = () => {
+    const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(storedCart);
+    setShowCartPopup(!showCartPopup);
+  };
+
+    
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
@@ -58,7 +69,14 @@ function Landing( { isLoggedIn }) {
         <div className="overlay">
           <header className="top-bar">
             {/* cart */}
-            <div className="cart-icon" title="Cart">🛒</div>
+            <div 
+            className="cart-icon" 
+            title="Cart" 
+            onClick={toggleCartPopup} 
+            style={{ cursor: "pointer"}}
+            >
+                🛒
+                </div>
 
             {/* Middle delivery text */}
 
@@ -79,6 +97,28 @@ function Landing( { isLoggedIn }) {
           </footer>
         </div>
       </div>
+      {/* Cart Popup */}
+      {showCartPopup && (
+        <div className="popup-overlay">
+            <div className="popup-box">
+                <span className="close-btn" onClick={() => setShowCartPopup(false)}>×</span>
+                <h3>Your Cart</h3>
+                {cartItems.length === 0 ? (
+                    <p>Your cart is empty.</p>
+                ) : (
+                    <ul>
+                        {cartItems.map((item, index) => (
+                            <li key={index}>
+                                {item.name} × {item.quantity} - <b>{item.price}</b>
+                            </li>
+
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            </div>
+      )}
 
       <div className="category-section">
         <div className="category" onClick={() => handleCategoryClick('Bake Shop')}>

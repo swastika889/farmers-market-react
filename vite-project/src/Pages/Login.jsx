@@ -13,15 +13,24 @@ function Login({ onLogin }) {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Dummy login
-    if (email === "user@example.com" && password === "123456") {
-      localStorage.setItem("token", "fake-jwt-token");
-      onLogin();
-      navigate("/");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const matchedUser = users.find(
+        (user) => user.email === email && user.password === password
+    );
+    if (matchedUser) {
+        localStorage.setItem("isLoggedIn", "true");
+        onLogin();
+
+        alert("Login successful!");
+        navigate("/");
+
     } else {
-      setError("Invalid email or password.");
+        setError("Invalid email or password.");
     }
+    
   };
+
 
   return (
    
@@ -86,7 +95,7 @@ function Login({ onLogin }) {
 
         <div className ="signup-text">
             <span>Don't have an account? </span>
-            <span className="signup-link" onClick={() => navigate("/Signup")}>
+            <span className="signup-link" onClick={() => navigate("/signup")}>
                 Sign up
             </span>
         </div>

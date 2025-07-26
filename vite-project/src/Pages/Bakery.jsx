@@ -1,10 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // NEW
+import "../Styles/Bakery.css";
+import cake from "../assets/images/cake.png";
+import croissant from "../assets/images/croissant.png";
+import cupcake from "../assets/images/cupcake.png";
+import donut from "../assets/images/donut.png";
+import bread from "../assets/images/bread.png";
+import banner from "../assets/images/bakerybanner.png";
+import cheesecake from "../assets/images/cheesecake.png";
+import cinnamonroll from "../assets/images/cinnamon.png";
+import lemontart from "../assets/images/tart.png";
+
+const bakeryItems = [
+  { name: "Chocolate Cake", image: cake, price: "Rs. 450" },
+  { name: "Croissant", image: croissant, price: "Rs. 120" },
+  { name: "Cupcake", image: cupcake, price: "Rs. 80" },
+  { name: "Donut", image: donut, price: "Rs. 100" },
+  { name: "Bread Loaf", image: bread, price: "Rs. 160" },
+  { name: "Cheese Cake", image: cheesecake, price: "Rs. 350" },
+  { name: "Cinnamon Roll", image: cinnamonroll, price: "Rs 200" },
+  { name: "Lemon Tart", image: lemontart, price: "Rs. 250" },
+];
 
 function Bakery() {
+  const [quantities, setQuantities] = useState(Array(bakeryItems.length).fill(0));
+  const navigate = useNavigate();
+
+  const increaseQuantity = (index) => {
+    const newQuantities = [...quantities];
+    newQuantities[index]++;
+    setQuantities(newQuantities);
+  };
+
+  const decreaseQuantity = (index) => {
+    const newQuantities = [...quantities];
+    if (newQuantities[index] > 0) {
+      newQuantities[index]--;
+      setQuantities(newQuantities);
+    }
+  };
+
+  const handleCheckout = () => {
+    const selectedItems = bakeryItems
+      .map((item, index) => ({
+        ...item,
+        quantity: quantities[index],
+      }))
+      .filter((item) => item.quantity > 0);
+
+    // Store in localStorage or state management
+    localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+
+    // Redirect to Landing page
+    navigate("/");
+  };
+
   return (
-    <div style={{ padding: "40px" }}>
-      <h2>Bakery Page</h2>
-      <p>All bakery items here.</p>
+    <div className="bakery-container">
+      <div className="banner">
+        <img src={banner} alt="Banner" className="banner-img" />
+      </div>
+
+      <div className="bakery-header">
+        <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
+        <h2 className="bakery-title">Bake Shop</h2>
+      </div>
+
+      <div className="bakery-grid">
+        {bakeryItems.map((item, index) => (
+          <div className="bakery-card" key={index}>
+            <img src={item.image} alt={item.name} className="bakery-image" />
+            <h3 className="bakery-name">{item.name}</h3>
+            <p className="bakery-price">{item.price}</p>
+
+            <div className="quantity-controls">
+              <button onClick={() => decreaseQuantity(index)}>-</button>
+              <span>{quantities[index]}</span>
+              <button onClick={() => increaseQuantity(index)}>+</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

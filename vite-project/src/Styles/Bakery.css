@@ -1,0 +1,111 @@
+.bakery-container {
+  padding: 40px;
+  background-color: #fffbe6;
+  min-height: 100vh;
+}
+
+.bakery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #b85c38;
+}
+
+.bakery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bakery-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.bakery-card:hover {
+  transform: translateY(-5px);
+}
+
+.bakery-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.bakery-name {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.bakery-price {
+  font-size: 1rem;
+  color: #888;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  font-size: 18px;
+  margin: 0 8px;
+  cursor: pointer;
+  border: none;
+  background-color: #d893c2;
+  color: #080505;
+  border-radius: 4px;
+}
+
+.quantity-controls span {
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+  color: black;
+}
+.bakery-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 20px 40px;
+}
+
+.checkout-btn {
+  background-color: #f0a040;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: #e08820;
+}
+
