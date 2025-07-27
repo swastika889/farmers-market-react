@@ -12,14 +12,14 @@ import cinnamonroll from "../assets/images/cinnamon.png";
 import lemontart from "../assets/images/tart.png";
 
 const bakeryItems = [
-  { name: "Chocolate Cake", image: cake, price: "Rs. 450" },
-  { name: "Croissant", image: croissant, price: "Rs. 120" },
-  { name: "Cupcake", image: cupcake, price: "Rs. 80" },
-  { name: "Donut", image: donut, price: "Rs. 100" },
-  { name: "Bread Loaf", image: bread, price: "Rs. 160" },
-  { name: "Cheese Cake", image: cheesecake, price: "Rs. 350" },
-  { name: "Cinnamon Roll", image: cinnamonroll, price: "Rs 200" },
-  { name: "Lemon Tart", image: lemontart, price: "Rs. 250" },
+  { name: "Chocolate Cake", image: cake, price: 450 },
+  { name: "Croissant", image: croissant, price: 120 },
+  { name: "Cupcake", image: cupcake, price: 80},
+  { name: "Donut", image: donut, price: 100},
+  { name: "Bread Loaf", image: bread, price: 160 },
+  { name: "Cheese Cake", image: cheesecake, price: 350 },
+  { name: "Cinnamon Roll", image: cinnamonroll, price: 200 },
+  { name: "Lemon Tart", image: lemontart, price: 250 },
 ];
 
 function Bakery() {

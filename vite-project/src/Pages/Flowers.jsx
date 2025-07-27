@@ -27,13 +27,13 @@ import daisy from "../assets/images/daisy.png";
 import flowersBanner from "../assets/images/flowersbanner.png"; // Make sure this exists
 
 const flowerItems = [
-  { name: "Rose", image: rose, price: "Rs. 100" },
-  { name: "Tulip", image: tulip, price: "Rs. 90" },
-  { name: "Lily", image: lily, price: "Rs. 110" },
-  { name: "Sunflower", image: sunflower, price: "Rs. 80" },
-  { name: "Orchid", image: orchid, price: "Rs. 150" },
-  { name: "Marigold", image: marigold, price: "Rs. 70" },
-  { name: "Daisy", image: daisy, price: "Rs. 60" },
+  { name: "Rose", image: rose, price: 100 },
+  { name: "Tulip", image: tulip, price: 90 },
+  { name: "Lily", image: lily, price: 110 },
+  { name: "Sunflower", image: sunflower, price: 80 },
+  { name: "Orchid", image: orchid, price: 150 },
+  { name: "Marigold", image: marigold, price: 70 },
+  { name: "Daisy", image: daisy, price: 60 },
 ];
 
 function Flowers() {

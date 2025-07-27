@@ -10,7 +10,7 @@ import Vegetables from "./Pages/Vegetables";
 import SoulFood from "./Pages/SoulFood"; 
 import Fruits from "./Pages/Fruits";
 import { Navigate } from "react-router-dom";
-
+import CheckoutPage from "./Pages/CheckoutPage";
 
 
 
@@ -31,6 +31,8 @@ function App() {
         <Route path="/vegetables" element={<Vegetables />} /> 
         <Route path="/soulfood" element={<SoulFood />} />
         <Route path="/fruits" element={<Fruits />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+
     
       </Routes>
     </Router>

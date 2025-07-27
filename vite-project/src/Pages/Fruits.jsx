@@ -12,14 +12,14 @@ import pineapple from "../assets/images/pineapple.png";
 import fruitBanner from "../assets/images/fruit-banner.png"; // Replace with your fruit banner
 
 const fruitItems = [
-  { name: "Apple", image: apple, price: "Rs. 180" },
-  { name: "Banana", image: banana, price: "Rs. 90" },
-  { name: "Mango", image: mango, price: "Rs. 250" },
-  { name: "Orange", image: orange, price: "Rs. 120" },
-  { name: "Grapes", image: grapes, price: "Rs. 200" },
-  { name: "Watermelon", image: watermelon, price: "Rs. 300" },
-  { name: "Papaya", image: papaya, price: "Rs. 150" },
-  { name: "Pineapple", image: pineapple, price: "Rs. 220" },
+  { name: "Apple", image: apple, price: 180 },
+  { name: "Banana", image: banana, price: 90 },
+  { name: "Mango", image: mango, price: 250 },
+  { name: "Orange", image: orange, price: 120 },
+  { name: "Grapes", image: grapes, price: 200 },
+  { name: "Watermelon", image: watermelon, price: 300 },
+  { name: "Papaya", image: papaya, price: 150 },
+  { name: "Pineapple", image: pineapple, price: 220 },
 ];
 
 function Fruits() {

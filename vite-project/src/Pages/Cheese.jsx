@@ -22,10 +22,10 @@ import brie from "../assets/images/brie.png";
 import cheesebanner from "../assets/images/cheesebanner.png";
 
 const cheeseItems = [
-  { name: "Cheddar", image: cheddar, price: "Rs. 300" },
-  { name: "Mozzarella", image: mozzarella, price: "Rs. 280" },
-  { name: "Gouda", image: gouda, price: "Rs. 320" },
-  { name: "Brie", image: brie, price: "Rs. 350" },
+  { name: "Cheddar", image: cheddar, price: 300 },
+  { name: "Mozzarella", image: mozzarella, price: 280 },
+  { name: "Gouda", image: gouda, price: 320 },
+  { name: "Brie", image: brie, price: 350 },
 ];
 
 function Cheese() {

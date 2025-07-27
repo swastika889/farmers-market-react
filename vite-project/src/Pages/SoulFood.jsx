@@ -31,28 +31,28 @@ const soulfoodItems = [
   {
     name: "Veg Mexican Burrito Bowl",
     image: vegbowl,
-    price: "Rs. 300",
+    price: 300,
     description: "A wholesome bowl of rice, beans, veggies, and salsa.",
     type: "veg"
   },
   {
     name: "Chicken Mexican Burrito Bowl",
     image: chickenbowl,
-    price: "Rs. 350",
+    price: 350,
     description: "Spicy grilled chicken served on a bed of Mexican rice and beans.",
     type: "nonveg"
   },
   {
     name: "Chicken Shawarma Rice Bowl",
     image: chickenricebowl,
-    price: "Rs. 330",
+    price: 330,
     description: "Middle Eastern flavors served with seasoned chicken and rice.",
     type: "nonveg"
   },
   {
     name: "Cheese Chicken Shawarma",
     image: chickenshawarma,
-    price: "Rs. 280",
+    price: 280,
     description: "Juicy chicken shawarma wrapped in a cheesy flatbread.",
     type: "nonveg"
 
@@ -60,14 +60,14 @@ const soulfoodItems = [
   {
     name: "Falafel Cheese Wrap",
     image: falafelwrap,
-    price: "Rs. 250",
+    price: 250,
     description: "Crispy falafel and melty cheese in a warm wrap.",
     type: "veg"
   },
   {
     name: "Supreme Chicken Burrito",
     image: burritosupreme,
-    price: "Rs. 370",
+    price: 370,
     description: "Loaded burrito with chicken, rice, beans, salsa, and cheese.",
     type: "nonveg"
 
@@ -75,21 +75,21 @@ const soulfoodItems = [
   {
     name: "Rustic Veggie Melt",
     image: grilledsandwich,
-    price: "Rs. 220",
+    price: 220,
     description: "A hearty sandwich with grilled veggies and house sauces.",
     type: "veg"
   },
   {
     name: "Mozzarella Pesto Melt Toast",
     image: pestosandwich,
-    price: "Rs. 240",
+    price: 240,
     description: "Fresh mozzarella with basil pesto on toasted bread.",
     type: "veg"
   },
   {
     name: "Grilled Chicken Cheese Sandwich",
     image: chickensandwich,
-    price: "Rs. 260",
+    price: 260,
     description: "Tender grilled chicken and cheese in a crispy sandwich.",
     type: "nonveg"
 

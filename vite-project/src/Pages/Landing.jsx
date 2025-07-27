@@ -16,6 +16,22 @@ import soulfood from "../assets/images/soulfood.png";
 function Landing() {
     const [showCartPopup, setShowCartPopup] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  //1
+  const handleRemoveItem = (indexToRemove) => {
+  const updatedCart = cartItems.filter((_, index) => index !== indexToRemove);
+  setCartItems(updatedCart);
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+    };
+
+    const handleClearCart = () => {
+    localStorage.removeItem("cartItems");
+    setCartItems([]);
+    };
+
+    const totalPrice = cartItems.reduce((sum, item) => {
+     return sum + (item.price || 0) * (item.quantity || 1);
+    }, 0);
+//1
 
   const toggleCartPopup = () => {
     const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -106,19 +122,72 @@ function Landing() {
                 {cartItems.length === 0 ? (
                     <p>Your cart is empty.</p>
                 ) : (
-                    <ul>
-                        {cartItems.map((item, index) => (
-                            <li key={index}>
-                                {item.name} × {item.quantity} - <b>{item.price}</b>
-                            </li>
+                    <div>
+                        <ul>
+                            {cartItems.map((item, index) => {
+                                console.log(item.name, item.price, item.quantity);
+                                return (
 
-                        ))}
-                    </ul>
+                                
+                                <li key={index} style={{ marginBottom: "10px" }}>
+                                    <span>
+                                        {item.name} × {item.quantity} - <b>{item.price}</b>
+                                    </span>
+                                    <button
+                                        onClick={() => handleRemoveItem(index)}
+                                        style={{
+                                        marginLeft: "10px",
+                                        background: "red",
+                                        color: "white",
+                                        border: "none",
+                                        padding: "2px 6px",
+                                        borderRadius: "4px",
+                                        cursor: "pointer",
+                                        }}
+                                    >
+                                        Delete
+                                    </button>
+                                </li>
+                                );
+                            })}
+                        </ul>
+                        <hr />
+                        <p><strong>Total: ₹{Math.round(totalPrice)}</strong></p>
+                        <button
+                            onClick={handleClearCart}
+                            style={{
+                                background: "orange",
+                                color: "white",
+                                border: "none",
+                                padding: "6px 12px",
+                                borderRadius: "6px",
+                                cursor: "pointer",
+                                marginTop: "10px",
+                            }}
+                        >
+                            Clear Cart
+                        </button>
+                        <button
+                            onClick={() => navigate("/checkout")}
+                            style={{
+                                background: "green",
+                                color: "white",
+                                border: "none",
+                                padding: "6px 12px",
+                                borderRadius: "6px",
+                                cursor: "pointer",
+                                marginTop: "10px",
+                                marginRight: "10px"
+                            }}
+                            >
+                            Checkout
+                        </button>
+
+                    </div>
                 )}
             </div>
-
-            </div>
-      )}
+        </div>
+    )}
 
       <div className="category-section">
         <div className="category" onClick={() => handleCategoryClick('Bake Shop')}>

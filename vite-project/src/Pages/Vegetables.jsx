@@ -26,14 +26,14 @@ import cabbage from "../assets/images/cabbage.png";
 import cauliflower from "../assets/images/cauliflower.png";
 
 const vegetableItems = [
-  { name: "Tomato", image: tomato, price: "Rs. 80" },
-  { name: "Potato", image: potato, price: "Rs. 60" },
-  { name: "Carrot", image: carrot, price: "Rs. 90" },
-  { name: "Onion", image: onion, price: "Rs. 100" },
-  { name: "Cucumber", image: cucumber, price: "Rs. 70" },
-  { name: "Broccoli", image: broccoli, price: "Rs. 120" },
-  { name: "Cabbage", image: cabbage, price: "Rs. 85" },
-  { name: "Cauliflower", image: cauliflower, price: "Rs. 110" },
+  { name: "Tomato", image: tomato, price: 80 },
+  { name: "Potato", image: potato, price: 60 },
+  { name: "Carrot", image: carrot, price: 90 },
+  { name: "Onion", image: onion, price: 100 },
+  { name: "Cucumber", image: cucumber, price: 70 },
+  { name: "Broccoli", image: broccoli, price: 120 },
+  { name: "Cabbage", image: cabbage, price: 85 },
+  { name: "Cauliflower", image: cauliflower, price: 110 },
 ];
 
 function Vegetables() {
