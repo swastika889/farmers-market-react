@@ -88,7 +88,7 @@ function Cheese() {
       </div>
 
       <div className="cheese-header">
-        <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
+        <button className="checkout-btn" onClick={handleCheckout}>Add To Cart</button>
         <h2 className="cheese-title">Cheese Corner</h2>
       </div>
 

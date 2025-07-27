@@ -80,7 +80,7 @@ function Fruits() {
       </div>
 
       <div className="fruit-header">
-        <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
+        <button className="checkout-btn" onClick={handleCheckout}>Add To Cart</button>
         <h2 className="fruit-title">Fruit Shop</h2>
       </div>
 
