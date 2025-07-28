@@ -11,7 +11,7 @@ import SoulFood from "./Pages/SoulFood";
 import Fruits from "./Pages/Fruits";
 import { Navigate } from "react-router-dom";
 import CheckoutPage from "./Pages/CheckoutPage";
-
+import AdminDashboard from "./Pages/admin/AdminDashboard";
 
 
 function App() {
@@ -25,13 +25,15 @@ function App() {
         <Route path="/" element={<Landing isLoggedIn={isLoggedIn} />} />
         <Route path="/login" element={<Login onLogin={() => setIsLoggedIn(true)} />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/bakery" element={ isLoggedIn ? <Bakery /> : <Navigate to="/Login" replace />} />
+        <Route path="/bakery" element={ isLoggedIn ? <Bakery /> : <Navigate to="/login" replace />} />
         <Route path="/cheese" element={<Cheese />} />
         <Route path="/flowers" element={<Flowers />} /> 
         <Route path="/vegetables" element={<Vegetables />} /> 
         <Route path="/soulfood" element={<SoulFood />} />
         <Route path="/fruits" element={<Fruits />} />
         <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
 
     
       </Routes>

@@ -3,6 +3,7 @@ import "../Styles/CheckoutPage.css";
 
 const CheckoutPage = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [username, setUsername] = useState("");
   const [address, setAddress] = useState("");
   const [contact, setContact] = useState("");
   const [orderConfirmed, setOrderConfirmed] = useState(false);
@@ -14,29 +15,36 @@ const CheckoutPage = () => {
 
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => {
-      // Ensure price is a number for calculation
       const priceNumber = parseFloat(item.price?.toString().replace(/[^\d.]/g, "")) || 0;
       return total + priceNumber * (item.quantity || 1);
     }, 0);
   };
 
   const handleConfirmOrder = () => {
-    if (!address.trim() || !contact.trim()) {
+    if (!username.trim() || !address.trim() || !contact.trim()) {
       alert("Please fill in all fields.");
       return;
     }
 
-    const orderDetails = {
+    const newOrder = {
+      id: Date.now(),
+      userName: username,
       items: cartItems,
       deliveryAddress: address,
       contactNumber: contact,
       totalAmount: calculateTotal(),
+      date: new Date().toISOString(),
+      status: "Pending",
     };
 
-    localStorage.setItem("order", JSON.stringify(orderDetails));
-    localStorage.removeItem("cartItems"); // clear cart storage
+    const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    const updatedOrders = [...existingOrders, newOrder];
+    localStorage.setItem("orders", JSON.stringify(updatedOrders));
+
+    localStorage.removeItem("cartItems");
 
     setCartItems([]);
+    setUsername("");
     setAddress("");
     setContact("");
     setOrderConfirmed(true);
@@ -44,7 +52,6 @@ const CheckoutPage = () => {
 
   const closePopup = () => {
     setOrderConfirmed(false);
-    // You can also redirect or do something else here if needed
   };
 
   return (
@@ -65,6 +72,16 @@ const CheckoutPage = () => {
           ))}
           <div className="total-section">
             Total: ₹{calculateTotal().toFixed(2)}
+          </div>
+
+          <div className="input-group">
+            <label>User Name:</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter your name"
+            />
           </div>
 
           <div className="input-group">
