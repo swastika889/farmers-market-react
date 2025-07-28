@@ -99,3 +99,36 @@ tbody tr {
 tbody tr:hover {
   background-color: #f9f9f9;
 }
+
+.product-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-width: 900px; /* or any suitable width */
+}
+
+.product-form input,
+.product-form select {
+  flex: 1 1 180px; /* flexible width, min 180px */
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.product-form button {
+  padding: 10px 20px;
+  background-color: #facc15; /* match your admin-card color */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 0 0 120px; /* fixed width for button */
+  transition: background-color 0.3s ease;
+}
+
+.product-form button:hover {
+  background-color: #eab308; /* darker yellow on hover */
+}
